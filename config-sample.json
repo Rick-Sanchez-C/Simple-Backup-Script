@@ -1,49 +1,25 @@
 {
     "days_to_keep": 15,
-    "alert_emails": [""],
+    "alert_emails": ["rlopber2912@g.educaand.es"],
     "sentry_dsn": null,
 
     "backups": [
         {
-            "name": "my_postgresql_backup",
-            "profile": "postgresql",
-
-            "databases": ["myDb"],
-            "database_user": ""
-        },
-        {
-            "name": "my_mysql_backup",
-            "profile": "mysql",
-
-            "databases": ["myDb1", "mydb2"],
-            "database_user": "",
-            "database_password": ""
-        },
-        {
             "name": "my_filesystem_backup",
             "profile": "filesystem",
-
             "directories": [
-                "/var/www/*",
-                "-/var/www/not-this",
-                "-/var/www/not-this-either"
+                "/home/usuario/*"
             ]
-        },
-        {
-            "name": "my_file_backup",
-            "profile": "file",
-
-            "path": "/var/opt/gitlab/backups/gitlab_config_*"
         }
     ],
 
     "targets": [
         {
             "type": "remote",
-            "host": "bkup.domain.com",
+            "host": "192.168.58.175",
             "port": 22,
-            "user": "john",
-            "dir": "/home/john/backups/",
+            "user": "root",
+            "dir": "/backups/",
             "days_to_keep": 7
         }
     ]
